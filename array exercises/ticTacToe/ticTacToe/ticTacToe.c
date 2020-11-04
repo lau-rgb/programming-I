@@ -123,6 +123,7 @@ int IsLine(int array[3][3], int player)
 		if ((array[0][i] == player && array[1][i] == player) && array[2][i] == player) result = player;
 		if ((array[i][0] == player && array[i][1] == player) && array[i][2] == player) result = player;
 	}
+	
 	if ((array[0][0] == player && array[1][1] == player) && array[2][2] == player) result = player;
 	if ((array[0][2] == player && array[1][1] == player) && array[2][0] == player) result = player;
 
