@@ -118,10 +118,20 @@ int DrawArray(int array[3][3])
 int IsLine(int array[3][3], int player)
 {
 	int result = 0;
+	int rowCount = 0;
+	int columnCount = 0;
+
 	for (int i = 0; i < 3; i++)
 	{
-		if ((array[0][i] == player && array[1][i] == player) && array[2][i] == player) result = player;
-		if ((array[i][0] == player && array[i][1] == player) && array[i][2] == player) result = player;
+		for (int j = 0; j < 3; j++)
+		{
+			if (array[i][j] == player)rowCount++;
+			else rowCount = 0;
+			if (array[i][j] == player)columnCount++;
+			else columnCount = 0;
+			
+			if (rowCount == 3 || columnCount == 3)result = player;
+		}
 	}
 	
 	if ((array[0][0] == player && array[1][1] == player) && array[2][2] == player) result = player;
